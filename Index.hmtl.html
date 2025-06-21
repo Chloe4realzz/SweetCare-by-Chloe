@@ -1,0 +1,208 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SweetCare by Chloe</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      background-color: black;
+      color: pink;
+      font-family: 'Playfair Display', serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #111;
+      padding: 10px 20px;
+      flex-wrap: wrap;
+    }
+    .logo-text {
+      font-size: 1.8em;
+      font-weight: 700;
+      color: #ff69b4;
+      white-space: nowrap;
+      font-family: 'Playfair Display', serif;
+    }
+    nav a {
+      margin: 0 12px;
+      color: pink;
+      text-decoration: none;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'Playfair Display', serif;
+    }
+    .auth-buttons button {
+      background-color: pink;
+      color: black;
+      border: none;
+      padding: 6px 14px;
+      margin-left: 5px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-weight: 600;
+      font-family: 'Playfair Display', serif;
+    }
+    section {
+      padding: 20px;
+      display: none;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    section.active {
+      display: block;
+    }
+    h1 {
+      text-align: center;
+      color: #ffb6c1;
+      font-size: 2em;
+      margin-bottom: 15px;
+      font-family: 'Playfair Display', serif;
+    }
+    p {
+      font-size: 1.1em;
+      text-align: center;
+      line-height: 1.5;
+    }
+    form label {
+      display: block;
+      margin: 10px 0 6px;
+      font-weight: 600;
+    }
+    form input,
+    form select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      font-size: 1em;
+      margin-bottom: 12px;
+      font-family: 'Playfair Display', serif;
+    }
+    form input[type="submit"] {
+      background-color: pink;
+      color: black;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    form input[type="submit"]:hover {
+      background-color: #ff85c1;
+    }
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #111;
+      color: pink;
+    }
+    ul {
+      padding-left: 20px;
+      font-family: 'Playfair Display', serif;
+    }
+    @media (max-width: 480px) {
+      .logo-text {
+        font-size: 1.4em;
+        text-align: center;
+        width: 100%;
+        margin-bottom: 8px;
+      }
+      nav {
+        width: 100%;
+        text-align: center;
+        margin-top: 8px;
+      }
+      .auth-buttons {
+        width: 100%;
+        text-align: center;
+        margin-top: 8px;
+      }
+      section {
+        padding: 15px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-text">SweetCare by Chloe</div>
+  <nav>
+    <a onclick="showPage('opening')">Home</a>
+    <a onclick="showPage('booking')">Booking</a>
+    <a onclick="showPage('policy')">Policies</a>
+  </nav>
+  <div class="auth-buttons">
+    <button onclick="showLogin()">Login</button>
+    <button onclick="showSignup()">Sign Up</button>
+  </div>
+</header>
+
+<section id="opening" class="active">
+  <h1>Welcome to SweetCare by Chloe!</h1>
+  <p>
+    At <strong>SweetCare by Chloe</strong>, we bring love, sparkle, and real care to your little ones and furry besties. 
+    From babysitting babies up to 6 years old to walking your dogs with patience or pet sitting while you're away — Chloe’s got it handled with kindness, bows, and a big smile! 💕🐾🍼
+  </p>
+</section>
+
+<section id="booking">
+  <h1>Book a Service</h1>
+  <form>
+    <label for="service">Choose a service:</label>
+    <select id="service" name="service">
+      <option value="babysitting">Babysitting (0–6 yrs)</option>
+      <option value="dog-walking">Dog Walking</option>
+      <option value="animal-sitting">Animal Sitting</option>
+    </select>
+    <label for="date">Pick a date:</label>
+    <input type="date" id="date" name="date" />
+    <label for="time">Pick a time:</label>
+    <input type="time" id="time" name="time" />
+    <label for="name">Your Name:</label>
+    <input type="text" id="name" name="name" />
+    <label for="email">Your Email:</label>
+    <input type="email" id="email" name="email" />
+    <label for="phone">Your Phone Number:</label>
+    <input type="tel" id="phone" name="phone" />
+    <input type="submit" value="Book Now" />
+  </form>
+</section>
+
+<section id="policy">
+  <h1>Policies</h1>
+  <ul>
+    <li><strong>Age Range:</strong> Babysitting for babies up to 6 years old only.</li>
+    <li><strong>Payment Methods:</strong> Cash, Cash App, and Apple Pay accepted.</li>
+    <li><strong>Cancellation Policy:</strong> Please give 24-hour notice for cancellations.</li>
+    <li><strong>Privacy Policy:</strong> Your information is safe and never shared without permission.</li>
+    <li><strong>Safety Policy:</strong> All care services follow strict safety guidelines to protect your loved ones.</li>
+    <li><strong>Availability:</strong> Services available Monday through Saturday, 8am to 8pm.</li>
+  </ul>
+</section>
+
+<footer>
+  &copy; 2025 SweetCare by Chloe — All rights reserved.
+</footer>
+
+<script>
+  function showPage(pageId) {
+    const pages = document.querySelectorAll('section');
+    pages.forEach(page => page.classList.remove('active'));
+    document.getElementById(pageId).classList.add('active');
+  }
+  function showLogin() {
+    alert('Login form coming soon!');
+  }
+  function showSignup() {
+    alert('Sign Up form coming soon!');
+  }
+</script>
+
+</body>
+</html>
